@@ -1,8 +1,11 @@
 import streamlit as st
 import os
-from langchain.agents import load_tools
 from langchain.agents import initialize_agent
 from langchain_cerebras import ChatCerebras
+from langchain_community.tools import WikipediaQueryRun
+from langchain_community.utilities import WikipediaAPIWrapper
+from langchain_community.tools import DuckDuckGoSearchRun
+from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
 import io
 import re
 import contextlib
@@ -44,9 +47,12 @@ if st.button("Generate output"):
     if user_input:
         # Initialize llm
         llm = ChatCerebras(model="llama3.1-70b", api_key=api_key)
-        # Load tools
-        tools = load_tools(["ddg-search", "wikipedia"], llm=llm)
 
+        # Load tools
+        wikipedia = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())
+        duckduckgo = DuckDuckGoSearchRun(api_wrapper=DuckDuckGoSearchAPIWrapper())
+        tools = [duckduckgo, wikipedia]
+        
         agent = initialize_agent(tools,
                                 llm,
                                 agent="zero-shot-react-description",

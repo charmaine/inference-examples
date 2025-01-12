@@ -1,6 +1,7 @@
 langchain
 langchain-cerebras
 langchain-core
+langchain-community
 streamlit
 duckduckgo-search
 wikipedia

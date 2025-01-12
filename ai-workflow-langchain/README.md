@@ -41,7 +41,9 @@ from langchain_cerebras import ChatCerebras
 # Initialize llm
 llm = ChatCerebras(model="llama3.1-70b", api_key=api_key)
 # Load tools
-tools = load_tools(["ddg-search", "wikipedia"], llm=llm)
+wikipedia = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())
+duckduckgo = DuckDuckGoSearchRun(api_wrapper=DuckDuckGoSearchAPIWrapper())
+tools = [duckduckgo, wikipedia]
 ```
 
 ### 2. Processing User Input and Creating the Agent
