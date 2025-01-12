@@ -50,9 +50,7 @@ if st.button("Generate output"):
 
         # Load tools
         wikipedia = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())
-        wikipedia.run("US Presidential Election")
         duckduckgo = DuckDuckGoSearchRun(api_wrapper=DuckDuckGoSearchAPIWrapper())
-
         tools = [duckduckgo, wikipedia]
         
         agent = initialize_agent(tools,
