@@ -37,6 +37,10 @@ Before we do anything, we must load our LLM as well as the tools it will use fro
 ```python
 from langchain.agents import load_tools
 from langchain_cerebras import ChatCerebras
+from langchain_community.tools import WikipediaQueryRun
+from langchain_community.utilities import WikipediaAPIWrapper
+from langchain_community.tools import DuckDuckGoSearchRun
+from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
 
 # Initialize llm
 llm = ChatCerebras(model="llama3.1-70b", api_key=api_key)
