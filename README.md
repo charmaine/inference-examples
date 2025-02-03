@@ -27,6 +27,7 @@ Currently, the Cerebras API provides access to two models: Meta’s Llama 3.1 8B
 - [Play with our live chatbot demo](https://inference.cerebras.ai/)
 - [Experiment with our inference solution in the playground](https://cloud.cerebras.ai/)
 - [Explore our API reference documentation](https://inference-docs.cerebras.ai/api-reference/chat-completions)
+- [![Open Val Town Template](https://stevekrouse-badge.web.val.run/?3)](https://www.val.town/v/stevekrouse/cerebrasTemplate)
 
 ## 📁 Projects Overview
 
